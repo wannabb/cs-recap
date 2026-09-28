@@ -33,3 +33,8 @@ constraints
   5) Binary M:N relation types: 관계 RS에 대응되는 새로운 릴레이션 RS1을 생성. RS에 속하는 모든 simple attributes를 RS1에 포함시키고, 참여하는 두 엔티티의 PK를 FK로 가져와 이 FK들의 조합을 RS1의 기본키(PK)로 지정함.
   6) N-ary relation types: 하나의 관계에 3개 이상의 엔티티가 참여하는 타입. 관계 RS 자체의 simple attributes와 참여하는 모든 엔티티의 PK(외래키)를 포함하는 새로운 릴레이션 RS1을 생성함. 기본적으로 모든 FK의 조합이 RS1의 기본키(PK)가 되나, 관계 대응수(카디널리티)가 1인 엔티티의 외래키는 기본키 조합에서 제외함.
   7) Multivalued attributes: 하나의 속성이 여러 개의 값을 가질 수 있는 경우(1NF 위반 방지). 멀티밸류드 어트리뷰트 MA에 대해 별도 릴레이션 R 생성. MA의 속성 A를 R에 포함시키고 소유 엔티티의 기본키를 R의 FK로 포함시킴. [FK + A]의 조합이 R의 기본키(PK)가 됨.
+
+4. 3NF normalization
+ - 1NF : MA 제거
+ - 2NF : 릴레이션의 기본키가 A + B의 조합인데 어떤 원소가 한쪽 에만 의존하면 그건 함수종속적인거고 제거하기위해 분리해야함
+ - 3NF : 이종적 함수 종속성 제거 : X -> Y -> Z로 X->Z를 달성하고 있을경우, 분리해야함
